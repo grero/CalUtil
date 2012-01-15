@@ -1,0 +1,234 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DBBD229E14C27BEA00102CE8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBD229D14C27BEA00102CE8 /* Foundation.framework */; };
+		DBBD22A114C27BEA00102CE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBD22A014C27BEA00102CE8 /* main.m */; };
+		DBBD22A514C27BEA00102CE8 /* CalUtil.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBD22A414C27BEA00102CE8 /* CalUtil.1 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DBBD229714C27BEA00102CE8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				DBBD22A514C27BEA00102CE8 /* CalUtil.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DBBD229914C27BEA00102CE8 /* CalUtil */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CalUtil; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBBD229D14C27BEA00102CE8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DBBD22A014C27BEA00102CE8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DBBD22A314C27BEA00102CE8 /* CalUtil-Prefix.pch */ = {isa = PBXFileReference; path = "CalUtil-Prefix.pch"; sourceTree = "<group>"; };
+		DBBD22A414C27BEA00102CE8 /* CalUtil.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = CalUtil.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DBBD229614C27BEA00102CE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBBD229E14C27BEA00102CE8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DBBD228E14C27BE900102CE8 = {
+			isa = PBXGroup;
+			children = (
+				DBBD229F14C27BEA00102CE8 /* CalUtil */,
+				DBBD229C14C27BEA00102CE8 /* Frameworks */,
+				DBBD229A14C27BEA00102CE8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DBBD229A14C27BEA00102CE8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DBBD229914C27BEA00102CE8 /* CalUtil */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DBBD229C14C27BEA00102CE8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DBBD229D14C27BEA00102CE8 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DBBD229F14C27BEA00102CE8 /* CalUtil */ = {
+			isa = PBXGroup;
+			children = (
+				DBBD22A014C27BEA00102CE8 /* main.m */,
+				DBBD22A414C27BEA00102CE8 /* CalUtil.1 */,
+				DBBD22A214C27BEA00102CE8 /* Supporting Files */,
+			);
+			path = CalUtil;
+			sourceTree = "<group>";
+		};
+		DBBD22A214C27BEA00102CE8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DBBD22A314C27BEA00102CE8 /* CalUtil-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DBBD229814C27BEA00102CE8 /* CalUtil */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBBD22A814C27BEA00102CE8 /* Build configuration list for PBXNativeTarget "CalUtil" */;
+			buildPhases = (
+				DBBD229514C27BEA00102CE8 /* Sources */,
+				DBBD229614C27BEA00102CE8 /* Frameworks */,
+				DBBD229714C27BEA00102CE8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CalUtil;
+			productName = CalUtil;
+			productReference = DBBD229914C27BEA00102CE8 /* CalUtil */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DBBD229014C27BE900102CE8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = NUS;
+			};
+			buildConfigurationList = DBBD229314C27BE900102CE8 /* Build configuration list for PBXProject "CalUtil" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DBBD228E14C27BE900102CE8;
+			productRefGroup = DBBD229A14C27BEA00102CE8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DBBD229814C27BEA00102CE8 /* CalUtil */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DBBD229514C27BEA00102CE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBBD22A114C27BEA00102CE8 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		DBBD22A614C27BEA00102CE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DBBD22A714C27BEA00102CE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DBBD22A914C27BEA00102CE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CalUtil/CalUtil-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DBBD22AA14C27BEA00102CE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CalUtil/CalUtil-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DBBD229314C27BE900102CE8 /* Build configuration list for PBXProject "CalUtil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBBD22A614C27BEA00102CE8 /* Debug */,
+				DBBD22A714C27BEA00102CE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBBD22A814C27BEA00102CE8 /* Build configuration list for PBXNativeTarget "CalUtil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBBD22A914C27BEA00102CE8 /* Debug */,
+				DBBD22AA14C27BEA00102CE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DBBD229014C27BE900102CE8 /* Project object */;
+}
