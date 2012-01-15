@@ -43,18 +43,35 @@ int main (int argc, const char * argv[])
     NSDateFormatter *dateFormat = [[[NSDateFormatter alloc] init] autorelease];
     //alternative: use NSDataDetector
     NSError *dataError;
-    NSDataDetector *dateDetector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeDate error:&dataError];
-    matches = [dateDetector matchesInString:sdate options:0 range:NSMakeRange(0, [sdate length])];
-    for (NSTextCheckingResult *match in matches) 
+     NSDataDetector *dateDetector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeDate error:&dataError];
+    if(sdate)
     {
-        startDate = match.date;
+        matches = [dateDetector matchesInString:sdate options:0 range:NSMakeRange(0, [sdate length])];
+    
+        for (NSTextCheckingResult *match in matches) 
+        {
+            startDate = match.date;
+        }
     }
-    matches = [dateDetector matchesInString:edate options:0 range:NSMakeRange(0, [edate length])];
-    for (NSTextCheckingResult *match in matches) 
+    else
     {
-        endDate = match.date;
+        printf("No start date given. Aborting...\n");
+        [pool drain];
+        return 0;
     }
-
+    if(edate)
+    {
+        matches = [dateDetector matchesInString:edate options:0 range:NSMakeRange(0, [edate length])];
+        for (NSTextCheckingResult *match in matches) 
+        {
+            endDate = match.date;
+        }
+    }
+    else
+    {
+        //assume we want a 1 hour event
+        endDate = [startDate dateByAddingTimeInterval:3600];
+    }
     [dateFormat setDateFormat: @"dd/MM/yyyy 'at' hh:mm"];
     
     //NSLog(@"Start date: %@",[dateFormat stringFromDate: [dateFormat dateFromString:sdate]]);
