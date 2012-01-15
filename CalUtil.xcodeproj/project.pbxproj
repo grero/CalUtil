@@ -10,6 +10,7 @@
 		DBBD229E14C27BEA00102CE8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBD229D14C27BEA00102CE8 /* Foundation.framework */; };
 		DBBD22A114C27BEA00102CE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBD22A014C27BEA00102CE8 /* main.m */; };
 		DBBD22A514C27BEA00102CE8 /* CalUtil.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBD22A414C27BEA00102CE8 /* CalUtil.1 */; };
+		DBBD22AC14C27CB400102CE8 /* CalendarStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBD22AB14C27CB400102CE8 /* CalendarStore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,8 +30,9 @@
 		DBBD229914C27BEA00102CE8 /* CalUtil */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CalUtil; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBBD229D14C27BEA00102CE8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DBBD22A014C27BEA00102CE8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DBBD22A314C27BEA00102CE8 /* CalUtil-Prefix.pch */ = {isa = PBXFileReference; path = "CalUtil-Prefix.pch"; sourceTree = "<group>"; };
+		DBBD22A314C27BEA00102CE8 /* CalUtil-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CalUtil-Prefix.pch"; sourceTree = "<group>"; };
 		DBBD22A414C27BEA00102CE8 /* CalUtil.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = CalUtil.1; sourceTree = "<group>"; };
+		DBBD22AB14C27CB400102CE8 /* CalendarStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CalendarStore.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +41,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBBD229E14C27BEA00102CE8 /* Foundation.framework in Frameworks */,
+				DBBD22AC14C27CB400102CE8 /* CalendarStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +68,7 @@
 		DBBD229C14C27BEA00102CE8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DBBD22AB14C27CB400102CE8 /* CalendarStore.framework */,
 				DBBD229D14C27BEA00102CE8 /* Foundation.framework */,
 			);
 			name = Frameworks;
@@ -193,6 +197,10 @@
 		DBBD22A914C27BEA00102CE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CalUtil/CalUtil-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -202,6 +210,10 @@
 		DBBD22AA14C27BEA00102CE8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CalUtil/CalUtil-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
