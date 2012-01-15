@@ -15,6 +15,12 @@ int main (int argc, const char * argv[])
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
     //parse the input parameters
     //user userDefaults for that
+    if( argc == 1 )
+    {
+        //print a usage method
+        printf("Usage: calutil -calName <calname> -title <event title> -startDate <start date of event> -endDate <end date of event> -location <location>\n");
+        return 0;
+    }
     NSUserDefaults *args = [NSUserDefaults standardUserDefaults];
     NSString *calName = [args stringForKey:@"calName"];
     //get the defaults calendar

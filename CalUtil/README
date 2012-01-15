@@ -1,0 +1,4 @@
+CalUtil is a simple tool to create iCal events from the command line in Mac OS X. It uses the NSDataDetector class to parse dates, so a wide variety of natural language type dates can be specified, for example
+"at 10 pm"
+"next wednesday at 12 pm"
+
