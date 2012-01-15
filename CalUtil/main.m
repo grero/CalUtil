@@ -31,11 +31,28 @@ int main (int argc, const char * argv[])
     //select the first match
     CalCalendar *cal = [matches objectAtIndex:0];
     //get the date
-    NSDateFormatter *dateFormat = [[[NSDateFormatter alloc] init] autorelease];
-    [dateFormat setDateFormat: @"dd/MM/yyyy 'at' hh:mm"];
     NSString *sdate = [args stringForKey:@"startDate"];
-    //NSLog(@"Start date: %@",[dateFormat stringFromDate: [dateFormat dateFromString:sdate]]);
     NSString *edate = [args stringForKey:@"endDate"];
+    NSDate *startDate,*endDate;
+    NSDateFormatter *dateFormat = [[[NSDateFormatter alloc] init] autorelease];
+    //alternative: use NSDataDetector
+    NSError *dataError;
+    NSDataDetector *dateDetector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeDate error:&dataError];
+    matches = [dateDetector matchesInString:sdate options:0 range:NSMakeRange(0, [sdate length])];
+    for (NSTextCheckingResult *match in matches) 
+    {
+        startDate = match.date;
+    }
+    matches = [dateDetector matchesInString:edate options:0 range:NSMakeRange(0, [edate length])];
+    for (NSTextCheckingResult *match in matches) 
+    {
+        endDate = match.date;
+    }
+
+    [dateFormat setDateFormat: @"dd/MM/yyyy 'at' hh:mm"];
+    
+    //NSLog(@"Start date: %@",[dateFormat stringFromDate: [dateFormat dateFromString:sdate]]);
+    
     //NSLog(@"End date: %@",edate);
     //get the title
     NSString *stitle = [args stringForKey:@"title"];
@@ -44,14 +61,15 @@ int main (int argc, const char * argv[])
     CalEvent *event = [CalEvent event];
     event.calendar = cal;
     event.title = stitle;
-    event.startDate = [dateFormat dateFromString:sdate];
-    event.endDate = [dateFormat dateFromString:edate];
+    event.startDate = startDate;//[dateFormat dateFromString:sdate];
+    event.endDate = endDate;//[dateFormat dateFromString:edate];
     event.location = loc;
     //save the event
     NSError *calError;
     if ([[CalCalendarStore defaultCalendarStore] saveEvent:event span:CalSpanThisEvent error:&calError] == NO)
     {
         printf("Could not save event\n");
+        printf("Error code was %d\n", (int)[calError code]);
     }
     else
     {
