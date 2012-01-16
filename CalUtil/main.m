@@ -18,13 +18,25 @@ int main (int argc, const char * argv[])
     if( argc == 1 )
     {
         //print a usage method
-        printf("Usage: calutil -calName <calname> -title <event title> -startDate <start date of event> -endDate <end date of event> -location <location>\n");
+        printf("Usage: calutil -list | -calName <calname> -title <event title> -startDate <start date of event> [ -endDate <end date of event> ] -location <location>\n");
         return 0;
     }
     NSUserDefaults *args = [NSUserDefaults standardUserDefaults];
-    NSString *calName = [args stringForKey:@"calName"];
-    //get the defaults calendar
+    //get the available calendars
     NSArray *calendars = [[CalCalendarStore defaultCalendarStore] calendars];
+    //check if we are just asking to list available calendars
+    NSArray *pargs = [[NSProcessInfo processInfo] arguments];
+    if([pargs containsObject:@"-list"])
+    {
+        printf("Available calendars:\n");
+        for( CalCalendar *_cal in calendars )
+        {
+            printf("\t%s\n",[[_cal title] UTF8String]);
+        }
+        [pool drain];
+        return 0;
+    }
+    NSString *calName = [args stringForKey:@"calName"];
     //check if the requested calendar exists
     NSArray *matches = [calendars filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"title==%@",calName]];
     //did we find one
