@@ -18,7 +18,7 @@ int main (int argc, const char * argv[])
     if( argc == 1 )
     {
         //print a usage method
-        printf("Usage: calutil -list | -calName <calname> -title <event title> -startDate <start date of event> [ -endDate <end date of event> ] -location <location>\n");
+        printf("Usage: calutil -list | -calName <calname> -title <event title> -startDate <start date of event> [ -endDate <end date of event> ] -location <location> [ -repeats daily | weekly | monthly | yearly ] \n");
         return 0;
     }
     NSUserDefaults *args = [NSUserDefaults standardUserDefaults];
@@ -92,6 +92,8 @@ int main (int argc, const char * argv[])
     //get the title
     NSString *stitle = [args stringForKey:@"title"];
     NSString *loc = [args stringForKey:@"location"];
+    NSString *repeats = [args stringForKey:@"repeats"];
+    
     //create the event
     CalEvent *event = [CalEvent event];
     event.calendar = cal;
@@ -99,6 +101,26 @@ int main (int argc, const char * argv[])
     event.startDate = startDate;//[dateFormat dateFromString:sdate];
     event.endDate = endDate;//[dateFormat dateFromString:edate];
     event.location = loc;
+    if(repeats)
+    {
+        //check whether we chose daily, weekly, monthly or yearly
+        if([repeats isEqualToString:@"daily"])
+        {
+            event.recurrenceRule = [[[CalRecurrenceRule alloc] initDailyRecurrenceWithInterval:1 end:nil] autorelease];
+        }
+        else if( [repeats isEqualToString:@"weekly"] )
+        {
+            event.recurrenceRule = [[[CalRecurrenceRule alloc] initWeeklyRecurrenceWithInterval:1 end:nil] autorelease];
+        }
+        else if( [repeats isEqualToString:@"monthly"] )
+        {
+            event.recurrenceRule = [[[CalRecurrenceRule alloc] initMonthlyRecurrenceWithInterval:1 end:nil] autorelease];
+        }
+        else if( [repeats isEqualToString:@"yearly"] )
+        {
+            event.recurrenceRule = [[[CalRecurrenceRule alloc] initYearlyRecurrenceWithInterval:1 end:nil] autorelease];
+        }
+    }
     //save the event
     NSError *calError;
     if ([[CalCalendarStore defaultCalendarStore] saveEvent:event span:CalSpanThisEvent error:&calError] == NO)
